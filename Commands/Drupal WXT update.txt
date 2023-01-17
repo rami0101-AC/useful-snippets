@@ -1,0 +1,45 @@
+https://drupalwxt.github.io/en/docs/general/update/
+
+composer require drupalwxt/wxt:[VERSION]
+composer update
+
+drush cache:rebuild
+drush updatedb
+lando drush updatedb
+
+
+drush cache:rebuild
+drush update:lightning
+lando drush update:lightning
+
+
+drush cache:rebuild
+drush update:wxt
+lando drush update:wxt
+
+
+lando drush updatedb && lando drush update:lightning && lando drush update:wxt
+
+
+https://www.drupal.org/project/devel_entity_updates
+drush entup
+
+
+
+
+
+
+mysql -h chrc -u root database < chrcmain_human_rights.sql
+
+
+drush sql-query "DELETE FROM key_value WHERE collection='core.extension' AND name='multilingual_menu_urls';"
+
+drush pmu multilingual_menu_urls
+
+drush php-eval '\Drupal::service("module_installer")->uninstall(["multilingual_menu_urls"]);'
+
+
+drush cdel core.extension module.multilingual_menu_urls
+
+
+drush php:eval '\Drupal::configFactory()->getEditable("core.extension")->clear("module.multilingual_menu_urls")->save(TRUE);'

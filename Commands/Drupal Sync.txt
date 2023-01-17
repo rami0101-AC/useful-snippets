@@ -1,0 +1,11 @@
+$config_directories['sync'] = '../config_sitename/sync';
+  
+Configuration management:
+Drush Export Configs:
+drush cex
+
+Config Import:
+drush cim
+
+Admin Url: /en/admin/config/development/configuration
+

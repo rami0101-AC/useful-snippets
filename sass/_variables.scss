@@ -1,0 +1,66 @@
+/*** Colours Variables ***/
+$white: #fff;
+$black: #000;
+$light: #f6f6f6;
+$dark: #333;
+$gray: #676767;
+$white: #ffffff;
+$navbar: $white;
+$text-color: #333;
+$text-gray: #757070;
+$separator: #bebebe;
+$primary: #006374;
+$secondary: #33c9bc;
+$brand-info: #f2f6f6;
+$third: #edee19;
+$main-light: #f2f6f6;
+$boxes: rgba(0, 79, 87, 0.7);
+
+$colours: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "info": $brand-info,
+  "third": $third,
+  "light": $light,
+  "dark": $dark,
+);
+
+/*** Fonts ***/
+
+$font-family-base: "Montserrat", "sans-serif", system-ui;
+$headings-font-family: $font-family-base;
+$font-second: "Open Sans", "sans-serif", system-ui;
+$font-third: "Roboto", "sans-serif", system-ui;
+
+/*** Responsive ***/
+$col-xl: 1200px;
+$col-lg: 992px;
+$col-md: 768px;
+$col-sm: 576px;
+$col-xs: 576px;
+
+/*** Link ***/
+//** Global textual link color.
+$link-color: #00285e;
+$link-visited: #0035dc;
+$link-hover-color: $link-color;
+$link-hover-decoration: underline;
+$table-border: #c9cfda;
+
+/*** Text ***/
+$text: #444;
+$font-color: $text;
+$heading-colour: $primary;
+$promo-text: $gray;
+
+$typography-colours: (
+  "text": $text,
+  "heading": $heading-colour,
+  "promo-text": $promo-text,
+  "link-color": $link-color,
+  "link-visited": $link-visited,
+  "link-hover-color": $link-hover-color,
+);
+
+// Glyphicons
+$icon-font-path: "../vendors/bootstrap/assets/fonts/bootstrap/";

@@ -1,0 +1,3 @@
+./create-host.sh host.domain.ca /var/www/host.domain.ca/html
+
+

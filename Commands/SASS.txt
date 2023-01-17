@@ -1,0 +1,1 @@
+npm install --save-dev gulp@3.9.1 gulp-sass gulp-sourcemaps gulp-concat gulp-rename gulp-uglify gulp-sass-glob node-sass-globbing

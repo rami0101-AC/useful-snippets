@@ -1,0 +1,54 @@
+Drupal 8 to 9 update:
+
+
+composer install
+
+
+drush cdel core.extension module.kint
+drush cdel core.extension module.multilingual_menu_urls
+drush cdel core.extension module.migrate_source_csv
+
+drush php-eval "\Drupal::keyValue('system.schema')->delete('kint');"
+drush php-eval "\Drupal::keyValue('system.schema')->delete('multilingual_menu_urls');"
+drush php-eval "\Drupal::keyValue('system.schema')->delete('migrate_source_csv');"
+
+drush updatedb (It will fail update 8403)
+
+drush ev "require_once('modules/contrib/media_entity_instagram/media_entity_instagram.post_update.php'); media_entity_instagram_post_update_change_source_name();"
+
+drush update:wxt
+drush update:lightning
+
+
+composer require 'drupal/devel_entity_updates:^4.0'
+drush en devel_entity_updates
+drush entup
+
+drush updatedb
+
+
+
+
+
+drush cache:rebuild
+drush updatedb
+
+
+composer require 'drupal/acquia_telemetry-acquia_telemetry:^1.0@alpha'
+
+
+
+drush cache:rebuild
+
+composer require 'drupal/devel_entity_updates:^4.0'
+drush en devel_entity_updates
+drush entup
+
+
+
+
+composer require 'drupal/translatable_menu_link_uri:^2.0'
+
+apply patch : https://www.drupal.org/project/drupal/issues/3212021
+"3212021 - [PHP 8.1] Serializable interface is deprecated": "https://www.drupal.org/files/issues/2021-09-18/3212021-13.patch"
+

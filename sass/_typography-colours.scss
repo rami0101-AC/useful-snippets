@@ -1,0 +1,75 @@
+@mixin typographyColours($colours) {
+  $heading-colour: if(
+    map-get($colours, "heading"),
+    map-get($colours, "heading"),
+    $heading-colour
+  );
+
+  $text: if(map-get($colours, "text"), map-get($colours, "text"), $text);
+
+  $link-color: if(
+    map-get($colours, "link-color"),
+    map-get($colours, "link-color"),
+    $link-color
+  );
+  $link-hover-color: if(
+    map-get($colours, "link-hover-color"),
+    map-get($colours, "link-hover-color"),
+    $link-hover-color
+  );
+
+  $link-visited: if(
+    map-get($colours, "link-visited"),
+    map-get($colours, "link-visited"),
+    $link-visited
+  );
+
+  $promo-text: if(
+    map-get($colours, "promo-text"),
+    map-get($colours, "promo-text"),
+    $promo-text
+  );
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4 {
+    color: $heading-colour;
+  }
+
+  p {
+    color: $text;
+  }
+
+  a {
+    &:not(.btn) {
+      color: $link-color;
+      transition: all 250ms ease-in-out;
+
+      &:hover,
+      &:focus,
+      &:focus-within {
+        color: $link-hover-color;
+      }
+
+      &:visited,
+      &.visited {
+        color: $link-visited;
+
+        &:hover,
+        &:focus,
+        &:focus-within {
+          color: $link-hover-color;
+        }
+      }
+    }
+  }
+
+  .promo-text {
+    color: $promo-text;
+  }
+}

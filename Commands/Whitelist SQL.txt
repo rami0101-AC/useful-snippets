@@ -1,0 +1,6 @@
+sudo nano /etc/httpd/conf.d/phpMyAdmin.conf
+
+
+# Restart httpd
+
+service httpd restart

@@ -1,0 +1,12 @@
+Import SERVER
+mysql -u root -p name_db < name_db
+
+
+----
+
+IMPORT MAMP
+/applications/MAMP/library/bin/mysql -u root -p name_db < name_db.sql
+
+Export MAMP
+/applications/MAMP/library/bin/mysqldump -u root -p name_db > name_db.sql
+
